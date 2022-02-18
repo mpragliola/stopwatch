@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	s := stopwatch.New()
+	s := stopwatch.NewStart()
 
 	time.Sleep(500 * time.Millisecond)
 
@@ -16,7 +16,10 @@ func main() {
 
 	time.Sleep(300 * time.Millisecond)
 
+	fmt.Print("\nData object dump\n")
+	fmt.Println(s.Data())
+	fmt.Print("\nDirect dump\n")
 	s.Dump()
-
+	fmt.Print("\nJson dump\n")
 	fmt.Println(s.Json())
 }
